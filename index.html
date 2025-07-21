@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang = "es">
+  <head>
+    <meta charset = "UTF-8">
+    <meta name = "viewport" content = "width=device-width, initial-scale=1.0">
+    <title> MiGotchi </title>
+    <link rel = "stylesheet", href = "styles/main.css">
+  </head>
+  <body id = "body">
+    <div id = "column">
+      <div id = "titleBox">
+        <div id = "title" style = "animation: none;">MiGotchi<span id = "title">_</span></div>
+      </div>
+      <div id = "row" style = "gap: 50px; width: 52%;">
+        <div id = "buttonBox">
+          <div id = "column">
+            <button class = "menuText" style = "height: 200px">Continue</button>
+            <label class = "checkbox-container">
+              <input type = "checkbox">
+              <span class = "checkmark"></span>
+              Auto play
+            </label>
+          </div>
+        </div>
+        <div id = "buttonBox">
+          <div id = "column">
+            <button class = "menuText">Editor</button>
+            <button id = "languageButton" name = "language">English</button>
+            <div id = "row">
+              <button id = "smallButton"> </button>
+              <button id = "smallButton" style = "background-image: url('/resources/ui/discord.png');"></button>
+              <button id = "smallButton" style = "background-image: url('/resources/ui/twitter.png');"></button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <script type = "module" src = "./scripts/main.js"></script>
+  </body>
+</html>

@@ -1,0 +1,250 @@
+@font-face
+ {
+  font-family: "Doto";
+  src: url("/resources/fonts/Doto-VariableFont_ROND,wght.ttf") format("truetype");
+}
+
+@font-face 
+{
+    font-family: "Space_Mono";
+    src: url("/resources/fonts/SpaceMono-Regular.ttf") format("truetype");
+}
+
+:root
+{
+    --background: #2D3047;
+    --text: #FFB7C5;
+    --title-light: #606483;
+    --title-shadow: #0D0E19;
+    --secondary-background: #989dd0;
+    --secondary-background-shadow: #7b72b4; 
+    --button: #35395e;
+}
+
+body, html 
+    {
+      margin: 0;
+      padding: 0; 
+      height: 100%;
+      overflow: hidden;
+      box-sizing: border-box;
+      background: var(--background);
+      border: #141623 4px dotted;
+      user-select: none;
+      transition: transform 0.1s;
+      position: relative;
+    }
+
+.shaking
+{
+    animation: shake 0.3s;
+}
+
+#title
+{
+    font-family: "Doto";  
+    font-size: 100pt;
+    font-weight: bolder;
+    color: var(--text); 
+    text-align: center;
+    animation: blinker 2000ms step-start infinite;
+}
+
+.menuText
+{
+    font-family: "Space_Mono";
+    font-size: 32pt;
+    font-weight: 600;
+    color: var(--text);
+    text-align: center;
+    transition: color 0.3s ease;
+    transition: background-color .3s ease;
+}
+
+.menuText:hover
+{    
+    color: var(--button);
+}
+
+#titleBox
+{
+    margin: auto;
+    width: 50%;
+    margin-top: 10%;
+    border-color: #2D3047;
+    border-top: var(--title-shadow) inset;
+    border-left: var(--title-shadow) inset;
+    border-bottom: var(--title-light) outset;
+    border-right: var(--title-light) outset;
+    border-radius: 10px;
+    background-color: rgb(24, 25, 37);
+    border-width: 15px;
+}
+
+#buttonBox
+{
+    margin: auto;
+    width: 50%;
+    margin-top: 5%;
+    display: flex;
+    justify-content: space-evenly;
+    background-color: var(--secondary-background);
+    height: 250px;
+    border-radius: 30px;
+    border-top: var(--secondary-background) inset;
+    border-left: var(--secondary-background) inset;
+    border-bottom: var(--title-light) outset;
+    border-right: var(--title-light) outset;
+    border-width: 10px;
+    padding: 15px;
+}
+
+button
+{
+    background-color: var(--button);
+    border-radius: 30px;
+    border-top: inset var(--secondary-background);
+    border-left: inset var(--secondary-background);
+    border-right: outset var(--title-light);
+    border-bottom:outset var(--title-light);
+    border-width: 10px;
+    padding: 15px;
+    height: 80%;
+    margin: auto;
+    cursor: pointer;
+    transition: background-color .3s ease;
+    width: 100%;
+}
+
+button:hover
+{
+    background-color: var(--secondary-background-shadow);
+}
+
+.checkbox-container
+{
+  display: inline-flex;
+  align-items: center;
+  cursor: pointer;
+  position: relative;
+  font-family: "Space_Mono";
+  font-size: 20pt;
+  font-weight: 600;  
+  color: var(--text);
+  text-align: center;  
+  transition: color .3s ease;
+}
+
+.checkbox-container:hover
+{
+    color: var(--button);
+}
+
+.checkbox-container input
+{
+  position: absolute;
+  opacity: 0;
+  cursor: pointer;
+}
+
+.checkmark 
+{
+  width: 30px;
+  height: 30px;
+  background-color: var(--text);
+  border-radius: 4px;
+  display: inline-block;
+  position: relative;
+  margin-right: 8px;
+  transition: background-color 0.3s ease;
+}
+
+.checkbox-container input:checked + .checkmark 
+{
+  background-color: var(--button);
+}
+
+.checkmark::after 
+{
+  content: "";
+  position: absolute;
+  display: none;
+  left: 10px;
+  top: 5px;
+  width: 5px;
+  height: 10px;
+  border: solid var(--text);
+  border-width: 0 5px 5px 0;
+  transform: rotate(45deg);
+}
+
+.checkbox-container input:checked + .checkmark::after 
+{
+  display: block;
+}
+
+#smallButton
+{
+    border: none;
+    border-radius: 3px;
+    background-image: url("/resources/ui/configuration.png");
+    background-size: contain;
+    background-position: center;
+    width: 50px;
+    height: 50px;
+    background-color: transparent;
+}
+
+#smallButton:hover
+{
+    background-color: white;
+    border-radius: 6px;
+}
+
+#column
+{
+    margin: auto; 
+    display: flex; 
+    flex-direction: column; 
+    gap: 10px;
+    align-items: center;
+}
+
+#row
+{
+    margin: auto; 
+    display: flex; 
+    justify-content: space-evenly; 
+    width: 100%;
+    align-items: center;
+}
+
+#languageButton
+{
+    border: none;
+    border-radius: 10px;
+    font-size: 12pt;
+    font-weight: bold;
+    font-family: "Space_Mono";
+    height: 50px;
+    width: 200px;
+    color: var(--text);
+    background-color: black;
+}
+
+#languageButton:hover
+{
+    color: black;
+    background-color: var(--text);
+}
+
+@keyframes blinker { 50% { opacity: 0; } }
+
+@keyframes shake 
+{
+    0% {transform: translate(0, 0);}
+    25% {transform: translate(1px, -1px);}
+    50% {transform: translate(-1px, 1px);}
+    75% {transform: translate(1px, 1px);}
+    100% {transform: translate(0, 0);}
+}
