@@ -1,12 +1,10 @@
-import { ScreenEffects } from "./animations.js";
+import { ScreenEffects } from "./Animations.js";
+import { templateManager } from "../utils/TemplateManager.js";
+import { CharacterDAO } from "../daos/CharacterDAO.js";
+import { storageManager } from "../utils/storageManager.js";
 
-document.addEventListener("DOMContentLoaded", () => {
-  const body = document.getElementById("body");
-  const botones = document.querySelectorAll(".menuText");
-
-  botones.forEach(boton => {
-    boton.addEventListener("click", () => {
-      ScreenEffects.screenShake(body, 300);
-    });
-  });
+document.addEventListener("DOMContentLoaded", () => 
+{
+    templateManager.verification();
+    storageManager.print();
 });

@@ -4,18 +4,19 @@
     <meta charset = "UTF-8">
     <meta name = "viewport" content = "width=device-width, initial-scale=1.0">
     <title> MiGotchi </title>
-    <link rel = "stylesheet", href = "styles/main.css">
+    <link rel = "stylesheet", href = "./styles/main.css">
+    <link rel = "icon" href="./resources/ui/cherry.ico" type = "image/x-icon">
   </head>
   <body id = "body">
     <div id = "column">
       <div id = "titleBox">
-        <div id = "title" style = "animation: none;">MiGotchi<span id = "title">_</span></div>
+        <div id = "title">MiGotchi</div>
       </div>
       <div id = "row" style = "gap: 50px; width: 52%;">
         <div id = "buttonBox">
           <div id = "column">
-            <button class = "menuText" style = "height: 200px">Continue</button>
-            <label class = "checkbox-container">
+            <button class = "menuText" style = "height: 200px; width: 300px;" >Play</button>
+            <label class = "checkbox-container"> 
               <input type = "checkbox">
               <span class = "checkmark"></span>
               Auto play
@@ -28,8 +29,10 @@
             <button id = "languageButton" name = "language">English</button>
             <div id = "row">
               <button id = "smallButton"> </button>
-              <button id = "smallButton" style = "background-image: url('/resources/ui/discord.png');"></button>
-              <button id = "smallButton" style = "background-image: url('/resources/ui/twitter.png');"></button>
+              <button id = "smallButton" style = "background-image: url('/resources/ui/discord.png');"
+               onclick = "window.open('https://www.discord.com', '_blank');"></button>
+              <button id = "smallButton" style = "background-image: url('/resources/ui/twitter.png');"
+              onclick = "window.open('https://www.x.com/juangelrt', '_blank');"></button>
             </div>
           </div>
         </div>
